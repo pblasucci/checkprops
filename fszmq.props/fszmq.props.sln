@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{560865B1-3188-45B9-91A3-3A90B75A5FE8}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "fszmq.props.fs", "fszmq.props.fs\fszmq.props.fs.fsproj", "{9AD1CA4D-7F16-4499-A792-3399B56A45DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fszmq.props.cs", "fszmq.props.cs\fszmq.props.cs.csproj", "{7657ADD8-0728-4835-A579-0C8C77DF35CB}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "fszmq.props.vb", "fszmq.props.vb\fszmq.props.vb.vbproj", "{AFEEF339-D50C-4006-9F67-B484BD82411C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Debug|x64.ActiveCfg = Debug|x64
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Debug|x64.Build.0 = Debug|x64
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Debug|x86.ActiveCfg = Debug|x86
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Debug|x86.Build.0 = Debug|x86
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Release|x64.ActiveCfg = Release|x64
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Release|x64.Build.0 = Release|x64
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Release|x86.ActiveCfg = Release|Any CPU
+		{9AD1CA4D-7F16-4499-A792-3399B56A45DD}.Release|x86.Build.0 = Release|Any CPU
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Debug|x64.ActiveCfg = Debug|x64
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Debug|x64.Build.0 = Debug|x64
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Debug|x86.ActiveCfg = Debug|x86
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Debug|x86.Build.0 = Debug|x86
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Release|x64.ActiveCfg = Release|x64
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Release|x64.Build.0 = Release|x64
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Release|x86.ActiveCfg = Release|x86
+		{7657ADD8-0728-4835-A579-0C8C77DF35CB}.Release|x86.Build.0 = Release|x86
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Debug|x64.ActiveCfg = Debug|x64
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Debug|x64.Build.0 = Debug|x64
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Debug|x86.ActiveCfg = Debug|x86
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Debug|x86.Build.0 = Debug|x86
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Release|x64.ActiveCfg = Release|x64
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Release|x64.Build.0 = Release|x64
+		{AFEEF339-D50C-4006-9F67-B484BD82411C}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
