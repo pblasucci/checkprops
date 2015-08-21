@@ -26,5 +26,5 @@ other platforms should work with little or no modification._
 ---
 
 The slide deck and source code are released under the MIT license. Please see
-the [LICENSE](https://github.com/pblasucci/checkprops/raw/tree/master/LICENSE.txt)
+the [LICENSE](https://github.com/pblasucci/checkprops/blob/master/LICENSE.txt)
 file for further details.
