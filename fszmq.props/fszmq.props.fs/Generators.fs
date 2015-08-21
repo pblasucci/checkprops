@@ -5,9 +5,22 @@ open System
 
 open fszmq
 
-/// A byte[] whose length is evenly divisible by 4
-type Mod4Binary = Mod4Binary of data:byte[]
+[<AutoOpen>]
+module Rules =
+  /// A byte[] whose length is evenly divisible by 4
+  type Mod4Binary = private Mod4Binary of data:byte[]
+  
+  /// Constructs a valid Mod4Binary instance from the given data  
+  let mod4Binary data =
+    // Mod4Binary encapsulates the following domain rules
+    if data = null || Array.length data % 4 <> 0 
+      then invalidArg "data" "Not evenly divisble by 4"
+    Mod4Binary data
+
+  /// Unpacks the data inside a Mod4Binary instance
+  let (|Mod4Binary|) = function Mod4Binary data -> data
  
+
 type Generators =
   /// Allows FsCheck to randomly generate fszmq.Message instances
   static member Message = 
@@ -33,17 +46,18 @@ type Generators =
   /// Allows FsCheck to randomly generate byte[] instances divisible by 4
   static member Mod4Binary =
     // Mod4Binary encapsulates the following domain rules
-    let isValid (data:byte[]) = data <> null    && 
-                                data.Length > 0 && 
-                                data.Length % 4 = 0
+    let isValid = function  
+      | null -> false 
+      | data -> let length = Array.length data
+                length > 0  && length % 4 = 0
     
     Arb.fromGenShrink ( 
       // generator
       Arb.generate<byte[]>
       |> Gen.suchThat isValid
-      |> Gen.map Mod4Binary
+      |> Gen.map mod4Binary
       // shrinker
     , fun (Mod4Binary data) ->  data 
                                 |> Arb.shrink 
                                 |> Seq.filter isValid
-                                |> Seq.map Mod4Binary )
+                                |> Seq.map mod4Binary )
