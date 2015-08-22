@@ -68,6 +68,9 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <Content Include="FsCheckAddin.fs">
+      <Paket>True</Paket>
+    </Content>
     <Compile Include="Distributions.cs" />
     <Compile Include="Properties.cs" />
     <Compile Include="Introduction.cs" />

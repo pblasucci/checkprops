@@ -8,7 +8,10 @@ open fszmq
 [<AutoOpen>]
 module Rules =
   /// A byte[] whose length is evenly divisible by 4
-  type Mod4Binary = private Mod4Binary of data:byte[]
+  type Mod4Binary = private Mod4Binary of data:byte[] with 
+    override self.ToString () = 
+      let (Mod4Binary data) = self
+      sprintf "Mod4Binary %A" data
   
   /// Constructs a valid Mod4Binary instance from the given data  
   let mod4Binary data =
@@ -46,10 +49,9 @@ type Generators =
   /// Allows FsCheck to randomly generate byte[] instances divisible by 4
   static member Mod4Binary =
     // Mod4Binary encapsulates the following domain rules
-    let isValid = function  
+    let isValid = function
       | null -> false 
-      | data -> let length = Array.length data
-                length > 0  && length % 4 = 0
+      | data -> Array.length data % 4 = 0
     
     Arb.fromGenShrink ( 
       // generator

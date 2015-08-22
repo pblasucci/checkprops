@@ -58,12 +58,14 @@
       var source = msg1.Data();
       var before = msg2.Data();
 
-      msg1.Copy(msg2);
-      var after = msg2.Data();
-
-      return after.SequenceEqual(source)
-                  .Label("Source")
-                  .And  (!after.SequenceEqual(before))
+      Func<Boolean> after  = () => 
+      {  
+        msg1.Copy(msg2); 
+        return msg2.Data().SequenceEqual(source); 
+      };
+  
+      return after.Label("Source")
+                  .And  (!msg2.Data().SequenceEqual(before))
                   .Label("Target");
     }
 
@@ -71,23 +73,21 @@
     /// Compare dissimilar content before and after cloning
     /// </summary>
     [CheckProperty(Arbitrary = new []{ typeof(Generators) })]
-    public Property CopyAltersTargetNotSource_Filtered ()
+    public Property CopyAltersTargetNotSource_Filtered (Message msg1, Message msg2)
     {
-      return Prop.ForAll<Message,Message>((msg1, msg2) => {
-        var source = msg1.Data();
-        var before = msg2.Data();
-        
-        Func<Boolean> act = () => 
-        { 
-          msg1.Copy(msg2);
-          return msg2.Data().SequenceEqual(source);
-        };
-
-        act.When  (!before.SequenceEqual(source))
-           .Label ("Source")
-           .And   (!msg2.Data().SequenceEqual(before))
-           .Label ("Target");
-      });
+      var source = msg1.Data();
+      var before = msg2.Data();
+      
+      Func<Boolean> doCopy = () => 
+      { 
+        msg1.Copy(msg2); 
+        var after = msg2.Data();
+      
+        return after.SequenceEqual(source) 
+          && !(after.SequenceEqual(before)); 
+      };
+      
+      return doCopy.When(!before.SequenceEqual(source));
     }
   }
 }
