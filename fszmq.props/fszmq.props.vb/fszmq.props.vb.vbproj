@@ -106,9 +106,6 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="FsCheckAddin.fs">
-      <Paket>True</Paket>
-    </Content>
     <Import Include="FsCheck" />
     <Import Include="FsCheck.NUnit" />
     <Import Include="FsCheck.NUnit.Addin" />
