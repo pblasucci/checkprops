@@ -6,7 +6,7 @@ for a presentation on random-testing on the CLR (.NET or Mono).
 
 To date, this material has been presented as follows:
 
-+ TODO: add dates, places here
++ 27 AUG 2015 at Southeast Valley .NET User Group, AZ (@sevdnug)
 
 ---
 
