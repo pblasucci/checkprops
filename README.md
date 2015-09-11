@@ -7,6 +7,7 @@ for a presentation on random-testing on the CLR (.NET or Mono).
 To date, this material has been presented as follows:
 
 + 27 AUG 2015 at Southeast Valley .NET User Group, AZ (@sevdnug)
++ 09 AUG 2015 at Jet.com Lunch-and-Learn, NJ (@jettechnology)
 
 ---
 
